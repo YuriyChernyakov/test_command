@@ -1,0 +1,257 @@
+h1,
+h2,
+h3,
+h5,
+h6,
+p {
+    list-style: none;
+}
+
+html {
+    box-sizing: border-box;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: #212121
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    color: #212121;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+a.active {
+color: orange;
+}
+
+.navigation {
+font-size: 22px;
+font-weight: 600;
+height: 60px;
+display: flex;
+box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+align-items: center;
+}
+
+.navLink {
+    margin-left: 50px;
+}
+
+.navLink:hover{
+    color: red;
+}
+
+.imgList{ 
+object-fit: contain;
+width: 100%;
+height: 330px;
+}
+
+.listElement{
+border: 1px solid gray ;
+margin-bottom: 30px;
+width: 220px;
+display: flex;
+flex-direction: column;
+gap: 10px;
+text-align: center;
+font-size: 17px;
+font-weight: 700;
+}
+
+.cast{
+margin: 0 5px 7px;
+}
+
+.listRev{
+display: list-item;
+flex-direction: column;
+gap: 10px;
+margin-bottom: 15px;
+}
+
+.filmList{
+list-style: none;
+display: grid;
+gap: 10px;
+grid-template-columns: 300px 300px 300px;
+justify-content: center;
+row-gap: 20px;
+}
+
+.linkMovie:hover {
+color: orange;
+transition: all 0.3s;
+}
+
+.titleHome{
+margin-bottom: 15px;
+font-size: 25px;
+text-align: center;
+}
+
+.divHome{ 
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+padding: 15px;
+}
+
+.listItemHome{
+width: 300px;
+font-size: 18px;
+font-weight: 500;
+}
+
+.imgHome{
+border-radius: 1.3em;
+width: 300px;
+height: 450px;
+object-fit: cover;
+margin-bottom: 7px;
+}
+
+.formMov{ 
+margin-bottom: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+font-size: 18px;
+}
+
+.inpMov{
+width: 350px;
+height: 28px;
+padding: 0 10px;
+font-size: 15px;
+margin-right: 15px;
+border-radius: 5px;
+}
+
+.buttMov{
+height: 29px;
+border: 0;
+width: 70px;
+border-radius: 5px;
+display: inline-block;
+cursor: pointer;
+}
+
+.buttMov:hover {
+    background-color: orange;
+    transition: all 0.3s;
+}
+
+.labelMov{
+font-weight: 700;
+margin-top: 15px;
+margin-bottom: 15px;
+}
+
+.arrow {
+margin-right: 5px;
+}
+
+.linkDet{
+display: flex;
+cursor: pointer;
+background-color: #e9e8e8f5;
+border-radius: 5px;
+height: 25px;
+width: 100px;
+justify-content: center;
+align-items: center;
+margin: 15px;
+transition: all 0.3s;
+}
+
+.linkDet:hover {
+background-color: orange;
+color: #ffffff;
+}
+
+svg {
+transition: all 0.3s;
+color: red;
+}
+
+.divDet{
+padding-bottom: 15px;
+gap: 30px;
+margin-bottom: 15px;
+box-shadow: 0 2px 0 gray;
+}
+
+.divDetMov{
+box-shadow: 0 2px 4px gray;
+display: flex;
+gap: 25px;
+padding: 20px;
+}
+
+.textDet{
+font-size: 18px;
+letter-spacing: 0.6;
+}
+
+.imgDet{
+object-fit: cover;
+width: 300px;
+}
+
+.divDetInf{
+padding: 10px;
+margin-bottom: 15px;
+}
+
+.divDetAbout{
+display: flex;
+flex-direction: column;
+margin-left: 15px;
+}
+
+.linkDetNav{
+margin-bottom: 10px;
+background-color: #e9e8e8f5;
+width: 70px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 5px;
+height: 25px;
+}
+
+.linkDetNav:hover {
+    background-color: orange;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.linkDetNav.active {
+    background-color: orange;
+    box-shadow: 0 2px 4px orange;
+}
+

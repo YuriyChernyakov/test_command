@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Loader from '../components/Loader/Loader';
 import { fetch } from '../components/Fetch';
 import { Link } from 'react-router-dom';
+import css from '../components/styled.module.css'
 
 const Home = () => {
   const [films, setFilms] = useState([]);
@@ -27,22 +28,23 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className={css.divHome}>
       {error ? (
         <h2>Sorry, something went wrong. Please reload the page</h2>
       ) : (
         <>
-          <h2>Trending Today</h2>
+          <h2 className={css.titleHome}>Trending Today</h2>
           {loader ? (
             <Loader />
           ) : (
-            <ul>
+            <ul className={css.filmList}>
               {films.map(
                 ({ id, name, title, poster_path, release_date = [] }) => (
-                  <li key={id}>
-                    <Link to={`/movies/${id}`} state={{ from: '/' }}>
+                  <li className={css.listItemHome} key={id}>
+                    <Link className={css.linkMovie} to={`/movies/${id}`} state={{ from: '/' }}>
                       {' '}
                       <img
+                        className={css.imgHome}
                         src={
                           poster_path ? firstImgLink + poster_path : defaultImg
                         }

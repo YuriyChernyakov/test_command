@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { fetch } from 'components/Fetch';
 import { useState, useEffect } from 'react';
 import Loader from 'components/Loader/Loader';
+import css from '../styled.module.css'
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -34,8 +35,8 @@ const Reviews = () => {
       ) : (
         <ul>
           {reviews.map(({ author, content, id }) => (
-            <li key={id}>
-              <h3>Author: {author}</h3>
+            <li className={css.listRev} key={id}>
+              <h3 className={css.titleRev}>Author: {author}</h3>
               <p>{content}</p>
             </li>
           ))}

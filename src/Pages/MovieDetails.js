@@ -3,6 +3,7 @@ import { Outlet, useParams, useLocation, NavLink, Link } from 'react-router-dom'
 import { fetch } from 'components/Fetch';
 import Loader from '../components/Loader/Loader';
 import { BiArrowBack } from 'react-icons/bi';
+import css from '../components/styled.module.css'
 
 const MovieDetails = () => {
   const [fullInfo, setFullInfo] = useState({});
@@ -44,42 +45,43 @@ const MovieDetails = () => {
   }
 
   return (
-    <div>
+    <div className={css.divDet}>
       {loader && <Loader />}
-      <Link to={backAdress}>
-        <BiArrowBack />
+      <Link className={css.linkDet} to={backAdress}>
+        <BiArrowBack className={css.arrow} />
         Go back
       </Link>
       {error && <h2>Sorry, something went wrong. Please try again</h2>}
 
       <>
-        <div>
+        <div className={css.divDetMov}>
           <img
+            className={css.imgDet}
             src={poster_path ? firstImgLink + poster_path : defaultImg}
             alt={title ?? name}
           />
-          <div>
+          <div className={css.divDetInf}>
             <h3>
               {title ?? name} ({release_date.slice(0, 4)})
             </h3>
             <h4>User Score: {(vote_average * 10).toFixed(1)}%</h4>
             <h4>Overview</h4>
-            <p>{overview}</p>
+            <p className={css.textDet}>{overview}</p>
             <h4>Genres</h4>
-            <p>
+            <p className={css.textDet}>
               {genres.length
                 ? genres.map(({ name }) => name).join(', ')
                 : 'unknown genres'}
             </p>
           </div>
         </div>
-        <div>
+        <div className={css.divDetAbout}>
           <h4>Additional Information</h4>
           <div>
-            <NavLink to="cast" state={{ from: backAdress }}>
+            <NavLink className={css.linkDetNav} to="cast" state={{ from: backAdress }}>
               Cast
             </NavLink>
-            <NavLink to="reviews" state={{ from: backAdress }}>
+            <NavLink className={css.linkDetNav} to="reviews" state={{ from: backAdress }}>
               Reviews
             </NavLink>
           </div>

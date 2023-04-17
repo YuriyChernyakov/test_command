@@ -6,6 +6,7 @@ import { useSearchParams, Link } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
 import { useLocation } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import css from '../components/styled.module.css'
 
 const Movies = () => {
   const [qwery, setQwery] = useState('');
@@ -54,33 +55,35 @@ const Movies = () => {
   }, [qwery, searchName]);
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>Enter the name of the movie</label>
+      <form className={css.formMov} onSubmit={handleSubmit(onSubmit)}>
+        <label className={css.labelMov}>Enter the name of the movie</label>
         <div>
           <input
+            className={css.inpMov}
             type="text"
             {...register('name', { required: true })}
             placeholder="Conan"
           />
 
-          <button type="submit">Search</button>
+          <button className={css.buttMov} type="submit">Search</button>
         </div>
       </form>
       <ToastContainer />
       {loader && <Loader />}
       {error ? (
-        <h2>
+        <h2 className={css.titleHome}>
           Sorry, something went wrong. Please reload the page and try again
         </h2>
       ) : (
-        <ul>
+        <ul className={css.filmList}>
           {searchres !== [] &&
             searchres.map(
               ({ id, name, title, poster_path, release_date = [] }) => (
-                <li key={id}>
-                  <Link to={`${id}`} state={{ from: location }}>
+                <li className={css.listItemHome} key={id}>
+                  <Link className={css.linkMovie} to={`${id}`} state={{ from: location }}>
                     {' '}
                     <img
+                      className={css.imgHome}
                       src={poster_path ? imgLink + poster_path : defaultImg}
                       alt={name}
                       loading="lazy"

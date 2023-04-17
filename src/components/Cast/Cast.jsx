@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Loader from '../Loader/Loader';
 import { fetch } from 'components/Fetch';
+import css from '../styled.module.css'
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -33,19 +34,20 @@ const Cast = () => {
       {loader && <Loader />}
 
       {error && <h2>Sorry, something went wrong. Please try again</h2>}
-      <ul>
+      <ul className={css.list}>
         {cast.length === 0 && !loader ? (
           <h3>Sorry, we didn't find anything</h3>
         ) : (
           cast.map(({ id, character, name, profile_path }) => (
-            <li key={id}>
+            <li className={css.listElement} key={id}>
               <img
+                className={css.imgList}
                 loading="lazy"
                 src={profile_path ? firstImgLink + profile_path : defaultImg}
                 alt={name}
               />
-              <p>{name}</p>
-              <p>Character: {character ? character : 'undefined'}</p>
+              <p className={css.cast}>{name}</p>
+              <p className={css.cast}>Character: {character ? character : 'undefined'}</p>
             </li>
           ))
         )}
