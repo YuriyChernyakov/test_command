@@ -10,7 +10,7 @@ const Cast = lazy(() => import('./Cast/Cast'));
 
 export const App = () => {
   return (
-    <>
+    <div>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
@@ -21,6 +21,6 @@ export const App = () => {
           </Route>
         </Route>
       </Routes>
-    </>
+    </div>
   );
 };
