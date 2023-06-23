@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { fetch } from 'components/Fetch';
 import { useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import Loader from 'components/Loader/Loader';
 import { useLocation } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import css from '../components/styled.module.css'
@@ -69,7 +68,6 @@ const Movies = () => {
         </div>
       </form>
       <ToastContainer />
-      {loader && <Loader />}
       {error ? (
         <h2 className={css.titleHome}>
           Sorry, something went wrong. Please reload the page and try again

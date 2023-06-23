@@ -1,7 +1,6 @@
 import { useState, useEffect, Suspense } from 'react';
 import { Outlet, useParams, useLocation, NavLink, Link } from 'react-router-dom';
 import { fetch } from 'components/Fetch';
-import Loader from '../components/Loader/Loader';
 import { BiArrowBack } from 'react-icons/bi';
 import css from '../components/styled.module.css'
 
@@ -46,7 +45,6 @@ const MovieDetails = () => {
 
   return (
     <div className={css.divDet}>
-      {loader && <Loader />}
       <Link className={css.linkDet} to={backAdress}>
         <BiArrowBack className={css.arrow} />
         Go back

@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import Loader from '../components/Loader/Loader';
 import { fetch } from '../components/Fetch';
 import { Link } from 'react-router-dom';
 import css from '../components/styled.module.css'
 
-const Home = () => {
+const Homes = () => {
   const [films, setFilms] = useState([]);
   const [error, setError] = useState(false);
   const [loader, setLoader] = useState(false);
@@ -33,10 +32,7 @@ const Home = () => {
         <h2>Sorry, something went wrong. Please reload the page</h2>
       ) : (
         <>
-          <h2 className={css.titleHome}>Trending Today</h2>
-          {loader ? (
-            <Loader />
-          ) : (
+            <h2 className={css.titleHome}>Trending Today</h2>
             <ul className={css.filmList}>
               {films.map(
                 ({ id, name, title, poster_path, release_date = [] }) => (
@@ -61,10 +57,9 @@ const Home = () => {
                 )
               )}
             </ul>
-          )}
         </>
       )}
     </div>
   );
 };
-export default Home;
+export default Homes;
